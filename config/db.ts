@@ -13,10 +13,10 @@ const productConfig = {
 const localConfig = {
   mysql:{
     port:3306,
-    host:'localhost',
+    host:'146.56.198.235',
     user:'root',
-    password:'zhian455454007',
-    database:'nest_demo',
+    password:'123456',
+    database:'nest_test',
     connectionLimit: 10
   }
 };
