@@ -6,6 +6,8 @@ COPY . /nest-app
 
 WORKDIR /nest-app
 
+RUN npm install
+ 
 EXPOSE 3001
 
 ENTRYPOINT npm run start
