@@ -4,7 +4,7 @@ const productConfig = {
     port:3306,
     host:'146.56.198.235',
     user:'root',
-    password:'root',
+    password:'123456',
     database:'nest_test',
     connectionLimit: 10
   }
