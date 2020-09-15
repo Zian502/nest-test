@@ -1,0 +1,11 @@
+FROM node:lts-alpine as build-stage
+
+MAINTAINER zcy-trading-data-market
+
+COPY . /app
+
+WORKDIR /app
+ 
+EXPOSE 3001
+ 
+ENTRYPOINT npm run start
