@@ -19,7 +19,7 @@ export class CommodityService {
    */
   async queryCommodityList(body:any):Promise<any> {
     const { pageIndex = 1 , pageSize = 10, keywords = '' } = body;
-    const currentIndex = (pageIndex -1) * pageSize < 0 ? 0 : (pageIndex - 1) * pageSize;
+    const currentIndex = (pageIndex - 1) * pageSize < 0 ? 0 : (pageIndex - 1) * pageSize;
 
     const commondityList: any[] = await sequelize.query(queryCommodityListSql(keywords, currentIndex, pageSize),{
       type: Sequelise.QueryTypes.SELECT, // 你正在执行的查询类型. 查询类型会影响结果在传回之前的格式

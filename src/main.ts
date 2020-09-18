@@ -18,7 +18,7 @@ async function bootstrap() {
   app.useGlobalFilters(new AnyExceptionFilter());
   // 过滤出来http异常
   app.useGlobalFilters(new HttpExceptionFilter());
-  app.setGlobalPrefix('dt')
+  app.setGlobalPrefix('api')
   await app.listen(3000);
 }
 bootstrap();

@@ -19,7 +19,7 @@ export class CommodityController {
 
   // 新建商品
   @UseGuards(AuthGuard('jwt'))
-  @UseInterceptors(new RbacInterceptor(2))
+  @UseInterceptors(new RbacInterceptor(3))
   @Post('create')
   async createCommodity(@Body() body: any, @Request() req: any) {
     return await this.commodityService.createCommodity(body, req.user.username);

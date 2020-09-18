@@ -16,17 +16,18 @@ export function findOneSql(tableName:string|'admin_user',username: string): stri
 
 export function queryCommodityListSql(keywords: string, currentIndex: number, pageSize: number): string {
   const sql = `
-    SELECT 
-      id, ccolumn_id columnId, commodity_name name, commodity_desc description, sale_money saleMoney, market_price marketPrice,
-      c_by createBy, DATE_FORMAT(c_time, '%Y-%m-%d %H:%i:%s') createTime,
-      u_by updateBy, DATE_FORMAT(u_time, '%Y-%m-%d %H:%i:%s') updateTime,
-    FROM
-      commodity  
-    WHERE
-      commodity_name LIKE '%${keywords}%'
-    ORDER BY
-      id DESC  
-    LIMIT ${currentIndex}, ${pageSize}
+  SELECT
+    id, ccolumn_id columnId, commodity_name name, commodity_desc description,
+    sale_money saleMoney, market_price marketPrice,
+    c_by createBy, DATE_FORMAT(c_time, '%Y-%m-%d %H:%i:%s') createTime,
+    u_by updateBy, DATE_FORMAT(u_time, '%Y-%m-%d %H:%i:%s') updateTime
+  FROM
+    commodity
+  WHERE
+    commodity_name LIKE '%${keywords}%'
+  ORDER BY
+    id DESC
+  LIMIT ${currentIndex}, ${pageSize}
   `;
   return sql;
 };
@@ -38,7 +39,7 @@ export function countCommodityListSql(keywords: string): string {
     FROM
       commodity
     WHERE
-      commondity_name LIKE '%${keywords}%'    
+      commodity_name LIKE '%${keywords}%'    
   `;
   return sql;
 };
